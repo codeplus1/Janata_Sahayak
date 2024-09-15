@@ -1,0 +1,1172 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+:root {
+    --PrimaryColor: #007ba5;
+    /* --PrimaryColor:#CC0021; */
+    --AncentColor: #F4DADA;
+    --WhiteColor: #fbfbfb;
+    --blackColor: #393939;
+    --logocolor: #cc0021;
+}
+
+body {
+    --sb-track-color: #F4DADA;
+    --sb-thumb-color: #cc0021;
+    --sb-size: 5px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body::-webkit-scrollbar{
+    width: var(--sb-size);
+  }
+
+  body::-webkit-scrollbar-track{
+    background: var(--sb-track-color);
+    border-radius: 1px;
+  }
+
+  body::-webkit-scrollbar-thumb{
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+  }
+
+  @supports not selector(::-webkit-scrollbar){
+    body {
+        scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+
+
+/* ======================Topbar Start ===================== */
+header{
+    padding: 0.1vh;
+    background: var(--PrimaryColor);
+}
+
+header .contact-details .container a{
+    color: var(--WhiteColor);
+    text-decoration: none;
+}
+
+header .contact-details .container .row .social .icon{
+    border-right: 1px solid var(--WhiteColor);
+    margin-right: 10px;
+}
+
+header .contact-details .container .row .social div a{
+    font-size: 15px;
+    padding: 0 8px;
+}
+
+header .contact-details .container .row .social div a:hover{
+    color: var(--AncentColor);
+    transition: ease all 0.3s;
+}
+/* Admin login button start --------------------------*/
+.css-button-sliding-to-left--red{
+    min-width: 100px;
+    height: 30px;
+    color: var(--WhiteColor);
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    border: 1px solid var(--WhiteColor);
+    font-family: "Average Sans", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.css-button-sliding-to-left--red:hover{
+    color: var(--WhiteColor) !important;
+    border: 1px solid var(--logocolor) !important;
+    transition: ease all .5s;
+
+}
+
+.css-button-sliding-to-left--red:hover:after{
+    width: 100%;
+}
+
+.css-button-sliding-to-left--red:after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: var(--logocolor);
+}
+/* Admin login button end --------------------------*/
+
+/* ===========================Topbar End =================================*/
+
+/* Navbar ------------------------------------------------ */
+
+
+/* ===================Carousel slide Start======================================== */
+.photo-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    overflow: hidden;
+    width: 100%;
+}
+.photo {
+    border-radius: 16px;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+
+    & img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+        /* filter: grayscale(1);
+        transition: scale 750ms ease-out, filter 250ms ease-in-out; */
+    }
+   /* & img:hover{
+        filter: grayscale(0);
+        scale: 1;
+    } */
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        bottom: -1rem;
+        left: -16rem;
+        background: linear-gradient(90deg, transparent, white, transparent);
+        width: 16rem;
+        opacity: 0;
+        transform: rotate(6deg);
+    }
+
+    &:hover::after {
+        left: 100%;
+        opacity: 0.15;
+        transition: inset 1s;
+    }
+
+    &:hover {
+        transform: scale(1.1) !important;
+    }
+
+    &.even {
+        transform: rotate(2deg);
+    }
+
+    &:not(.even) {
+        transform: rotate(-2deg);
+    }
+}
+/* ===================Carousel slide end ======================================== */
+
+/* Hero Section Start---------------------------------------*/
+
+.hero {
+    background-color:#e9ecf3;
+    min-height: 510px;
+}
+
+.heroimage{
+    height: 510px;
+}
+
+.heroimage img {
+    width: 410px;
+}
+
+.hero .text {
+    max-width: 515px;
+    padding-left: 0;
+}
+
+.title h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--PrimaryColor);
+}
+
+.title p {
+    font-size: 20px;
+}
+
+.subtitle h2 {
+    color: var(--blackColor);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.subtitle p {
+    font-size: 16px;
+}
+
+.subtitle .whatsapp {
+    background-color: var(--PrimaryColor);
+    padding: 8px 10px;
+    color: var(--WhiteColor);
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.subtitle .facebook {
+    background-color: var(--logocolor);
+    padding: 8px 10px;
+    color: var(--WhiteColor);
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.heroimage{
+    padding-left: 0;
+}
+
+
+/* sm hero */
+
+.smtitle h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--PrimaryColor);
+}
+
+.smtitle p {
+    font-size: 16px;
+}
+
+.smsubtitle h2 {
+    color: var(--blackColor);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.smsubtitle p {
+    font-size: 16px;
+}
+
+.smsubtitle .smwhatsapp {
+    background-color: var(--PrimaryColor) !important;
+    padding: 8px 10px;
+    color: var(--WhiteColor) !important;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom:5px;
+    text-decoration: none;
+}
+
+.smsubtitle .smwhatsapp:hover {
+    background-color: var(--PrimaryColor);
+}
+
+.smsubtitle .smfacebook {
+    background-color: var(--logocolor);
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.smsubtitle .smfacebook:hover {
+    background-color: var(--PrimaryColor);
+}
+.smheroimage img {
+    width: 100%;
+}
+
+/* Hero section End */
+
+/* About Us----------------------------------------------- */
+.css-button-arrow--about {
+    min-width: 160px;
+    height: 35px;
+    color: var(--WhiteColor) !important;
+    padding: 5px 10px;
+    text-decoration: none;
+    /* font-weight: bold; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    /* outline: none; */
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--logocolor) !important;
+  }
+  .css-button-arrow--about:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .css-button-arrow--about:hover:after {
+    opacity: 1;
+    right: 20px;
+  }
+  .css-button-arrow--about:after {
+    content: "\2192";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 35px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+
+/* Total Student Start ------------------------- */
+section.entry {
+    background: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(244, 218, 218, 1)),
+            to(rgba(244, 218, 218, 1))
+        ),
+        url(/image/entry.jpg);
+    background: linear-gradient(
+            right,
+            rgba(244, 218, 218, 1),
+            rgba(244, 218, 218, 1)
+        ),
+        url(/image/entry.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.entry .container .row div h1 {
+    color: #393939;
+    text-align: center;
+}
+section.entry .container .row p{
+    color: #393939;
+    text-align: center;
+}
+
+section.entry .container .row div h1 span {
+    color: var(--logocolor);
+    font-size: 35px;
+}
+
+section.entry .container .row div p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* Get Admission Button */
+.css-button-arrow--red {
+    text-decoration: none;
+    min-width: 350px;
+    height: 40px;
+    color: var(--WhiteColor) !important;
+    padding: 5px 10px;
+    /* font-weight: bold; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--logocolor) !important;
+  }
+  .css-button-arrow--red:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .css-button-arrow--red:hover:after {
+    opacity: 1;
+    right: 20px;
+  }
+  .css-button-arrow--red:after {
+    content: "\2192";
+    position: absolute;
+    opacity: 0;
+    font-size: 30px;
+    line-height: 35px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+
+/* Total Student End ------------------- */
+
+
+/* popular Course Start ------------------------------------------- */
+section.popular-course .container .item .list div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  section.popular-course .container .item .list div a {
+    text-decoration: none;
+    margin: 15px 10px;
+  }
+
+  section.popular-course .container .item .list div a .box {
+    width: 250px;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 12px #bbbaba;
+            box-shadow: 1px 1px 12px #bbbaba;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+
+  section.popular-course .container .item .list div a .box:hover {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+
+  section.popular-course .container .item .list div a .box .imgbx {
+    height: 170px;
+    line-height: 160px;
+    position: relative;
+    text-align: center;
+  }
+
+  section.popular-course .container .item .list div a .box .imgbx img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
+  }
+
+  section.popular-course .container .item .list div a .box .content h1 {
+    color: var(--logocolor);
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
+  section.popular-course .container .item .list div a .box .content span {
+    color: #3C4043;
+    font-size: 15px !important;
+    font-weight: bold;
+  }
+
+
+  @media screen  and (max-width:768px){
+    section.popular-course .container .item .list div a .box {
+      width: 90vw;
+    }
+
+  section.popular-course .container .item .list div a .box .imgbx {
+    height: 250px;
+    line-height: 250px;
+    position: relative;
+    text-align: center;
+  }
+
+  section.popular-course .container .item .list div a .box .imgbx img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
+  }
+  }
+  /* popular Course end ------------------------------------------------------- */
+
+  /* Student card Start ------------------------- */
+section.studentcard {
+    background: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(219, 226, 239,1)),
+            to(rgba(219, 226, 239,1))
+        ),
+        url(/image/entry.jpg);
+    background: linear-gradient(
+            right,
+            rgba(219, 226, 239,1),
+            rgba(219, 226, 239,1)
+        ),
+        url(/image/entry.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.studentcard .container .row div h2 {
+    color: #393939;
+    text-align: center;
+}
+section.studentcard .container .row p{
+    color: #393939;
+    text-align: center;
+}
+
+section.studentcard .container .row div h2 span {
+    color: var(--logocolor);
+    font-size: 35px;
+}
+
+section.studentcard .container .row div p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* Get student card Button */
+.css-button-arrow--blue {
+    text-decoration: none;
+    min-width: 350px;
+    height: 40px;
+    color: var(--WhiteColor) !important;
+    padding: 5px 10px;
+    /* font-weight: bold; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--PrimaryColor) !important;
+  }
+  .css-button-arrow--blue:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .css-button-arrow--blue:hover:after {
+    opacity: 1;
+    right: 20px;
+  }
+  .css-button-arrow--blue:after {
+    content: "\2192";
+    position: absolute;
+    opacity: 0;
+    font-size: 30px;
+    line-height: 35px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+
+/* Student card end ------------------------- */
+
+/* workshops Start -------------------------------------------- */
+.workshop .container {
+    max-width: 1000px;
+    margin: 0 auto; /* Adjusted margin to remove top and bottom space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .workshop .card {
+    position: relative;
+    margin: 20px 0; /* Adjusted margin to reduce top and bottom space */
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 0 20px 20px rgba(0, 0, 0, .5);
+    transition: 1s;
+  }
+
+  .workshop .card:hover {
+    z-index: 10000;
+    transform: perspective(2000px) rotate(-5deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+  }
+
+  .workshop .card .Box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    position: relative;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s cubic-bezier(.15, 1.7, .84, .58);
+    background: #111;
+  }
+
+  .workshop .card .Box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .workshop .card:hover .Box {
+    transform: rotateY(-105deg);
+  }
+
+  .workshop .card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: -1;
+  }
+
+/* workshops end ---------------------------------------------- */
+
+
+/* Blog Section && Testimonial Section CSS Start ------------------------------------- */
+section.blog .container .item .list div {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+section.blog .container .item .list div .box {
+    margin: 15px;
+    width: 340px;
+    -webkit-box-shadow: 2px 2px 15px var(--AncentColor) !important;
+    box-shadow: 2px 2px 15px var(--AncentColor) !important;
+    transition: transform 0.3s ease-in-out; /* Adding smooth transition */
+}
+
+section.blog .container .item .list div .box:hover {
+    transform: translateY(-5px); /* Move box 5px up on hover */
+}
+
+section.blog .container .item .list div .box .imgbx {
+    height: 200px;
+}
+
+section.blog .container .item .list div .box .imgbx img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    filter: grayscale(1);
+    transition: scale 750ms ease-out, filter 250ms ease-in-out;
+}
+section.blog .container .item .list div .box .imgbx img:hover {
+scale: 1;
+filter: grayscale(0);
+}
+
+section.blog .container .item .list div .box .content h1 {
+    color: black;
+}
+
+section.blog .container .item .list div .box .content .text {
+    height: 80px;
+    font-size: 13px;
+}
+
+section.blog .container .item .list div .box .content .more {
+    color: black;
+    text-decoration: none;
+}
+
+section.blog .container .item .list div .box .content .more:hover {
+    color: var(--logocolor);
+}
+
+section.blog .container .item .list div .box .card-footer {
+    border-radius: 0 0 10px 10px;
+}
+
+/* View All Button Start */
+.css-button-sliding-to-top--red {
+    text-decoration: none;
+    min-width: 130px;
+    height: 40px;
+    color: var(--logocolor);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: #fff;
+    overflow: hidden;
+    border: 2px solid var(--logocolor) !important;
+    /* color: var(--logocolor) !important; */
+  }
+  .css-button-sliding-to-top--red:hover {
+    color: var(--WhiteColor) !important;
+  }
+  .css-button-sliding-to-top--red:hover:after {
+    height: 100%;
+    color: var(--WhiteColor) !important;
+  }
+  .css-button-sliding-to-top--red:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background: var(--logocolor);
+  }
+
+/* Blog & Testimonial Section End -------------------------------------------------------- */
+
+
+/* Client Section Start ------------------------------------------------- */
+section.client .container .item .list .marquee {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0);
+    }
+}
+
+section.client .container .item .list .marquee .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 100%;
+    -webkit-animation: scroll 20s infinite linear;
+    animation: scroll 20s infinite linear;
+}
+
+section.client .container .item .list .marquee .item:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+section.client .container .item .list .marquee .item li {
+    list-style: none;
+    min-width: 200px;
+    height: 120px;
+    margin: 0 15px;
+    line-height: 120px;
+}
+
+section.client .container .item .list .marquee .item li img {
+    min-width: 100px;
+    height: 120px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+/* Client Section End ------------------- */
+
+
+/* =================== Gallery Section Start ------------------------------------------------- */
+section.gallery .container .item .list {
+    margin: 10px 0;
+}
+
+section.gallery .container .item .list img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+section.gallery .container .item .list img:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-box-shadow: 2px 2px 15px lightgrey;
+    box-shadow: 2px 2px 15px lightgrey;
+}
+
+/* Gallery Section End ------------------------ */
+
+
+/* Contact Section Start ----------------------------------------------------- */
+section.contact .container .row .details .card .card-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+section.contact .container .row .details .card .card-footer .list {
+    margin: 5px 0;
+}
+
+section.contact .container .row .details .card .card-footer .list .icon {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #dc4c2c;
+}
+
+section.contact .container .row .details .card .card-footer .list .content {
+    padding-left: 5px;
+}
+
+section.contact .container .row .details .card .card-footer .list .content h1 {
+    margin: 0;
+}
+
+section.contact .container .row .details .card .card-footer .list .content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+section.contact .container .row .details .card .card-footer .list .content p a {
+    text-decoration: none;
+    color: #666363;
+}
+
+section.contact
+    .container
+    .row
+    .details
+    .card
+    .card-footer
+    .list
+    .content
+    p
+    a:hover {
+    color: #dc4c2c;
+}
+
+section.contact .container .row .map iframe {
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    section.contact .container .row .map iframe {
+        height: 300px;
+    }
+}
+
+/* Contact Section End -------------------------------------------------------- */
+
+
+/* =============== FAQS CSS  START HERE ====================*/
+
+section.faq.container {
+    margin: 0 auto;
+    padding: 4rem;
+    width: 48rem;
+  }
+
+  section.faq.container.accordion .accordion-item {
+    border-bottom: 1px solid var(--WhiteColor);
+  }
+
+  .accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid var(--logocolor);
+  }
+
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: var(--blackColor);
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+
+  .accordion button:hover,
+  .accordion button:focus {
+    cursor: pointer;
+    color: var(--logocolor);
+  }
+
+  .accordion button:hover::after,
+  .accordion button:focus::after {
+    cursor: pointer;
+    color: var(--logocolor);
+    border: 1px solid var(--logocolor);
+  }
+
+  .accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+
+  .accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  .accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+
+  .accordion button[aria-expanded='true'] {
+    color: var(--logocolor);
+  }
+  .accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+  }
+  .accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+  }
+
+/* ==================== FAQS CSS END HERE =================== */
+
+
+/* ===========================Footer Start ============================================= */
+footer {
+    color: black;
+  }
+
+  footer .container .row .details .logo img {
+    width: 90px;
+  }
+
+  footer .container .row .details .content {
+    padding-left: 0px;
+  }
+
+  footer .container .row .details .content p {
+    margin: 5px 0;
+  }
+
+  footer .container .row .details .content p a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+
+  footer .container .row .details .content p a:hover {
+    color: var(--logocolor);
+  }
+
+  footer .container .row .details .social {
+    padding-left: 0px;
+  }
+
+  footer .container .row .details .social p {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  footer .container .row .details .social ul {
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  footer .container .row .details .social ul li {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: var(--PrimaryColor);
+    border-radius: 10px;
+  }
+
+  footer .container .row .details .social ul li:hover {
+    background-color: var(--logocolor);
+  }
+
+  footer .container .row .details .social ul li a {
+    text-decoration: none;
+    color: var(--WhiteColor);
+  }
+
+  footer .container .row .pages a {
+    text-decoration: none;
+    color: black;
+    margin: 10px 0;
+  }
+
+  footer .container .row .course a {
+    text-decoration: none;
+    color: black;
+    margin: 10px 0;
+  }
+/* Footer End ---------------------------------------------------- */
+
+
+
+
+
+/* Pagination Css Start */
+
+/* Customize the pagination links */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style the individual pagination item */
+.pagination .page-item {
+    margin: 0 5px;
+    border-color: white;
+}
+.pagination .page-link {
+    background-color: var(--AncentColor) !important;
+    border-color: var(--AncentColor) !important;
+    color: var(--blackColor);
+}
+
+/* Style the active pagination item */
+.pagination .page-item.active .page-link {
+    background-color: var(--logocolor) !important;
+    border-color: var(--logocolor) !important;
+    color: var(--WhiteColor);
+}
+
+/* Style the hover state of pagination item */
+.pagination .page-item .page-link:hover {
+    color: var(--WhiteColor) !important;
+    background-color: var(--logocolor) !important;
+}
+
+
+
+/*  Responsive Css Start for Enquiry */
+.courselist .icon img{
+    width: 70px;
+}
+.course-img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.enquiry{
+    top: 100px;
+    z-index: 1;
+}
+@media screen and (max-width:768px){
+    .clearfix{
+        width:100%;
+    }
+    .enquiry{
+        width: 100%;
+    }
+
+}
+
+
+/* terms and condition */
+/* Terms-condition */
+section.about {
+    /* background: #294d69; */
+    background: linear-gradient( #0f202eb4 100%, #09131bbd), url(/assets/img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+
+  section.about .container div .left, section.about .container div .right {
+    width: 300px;
+    height: 2px;
+    border: 2px solid whitesmoke;
+    margin: 5px 15px;
+  }
+
+  section.about .container div h1 {
+    color: #fdfdfd;
+  }
+
+
+/* captcha */
