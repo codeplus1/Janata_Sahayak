@@ -1,12 +1,17 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+    <div class="mb-4"></div>
+    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400 text-center ">
+        {{ __('आफ्नो पासवर्ड बिर्सनुभयो? कुनै समस्या छैन। केवल हामीलाई तपाईंको E-mail दिनुहोस् र हामी तपाईंलाई Password reset Link Email गर्नेछौं जसले तपाईंलाई नयाँ Password छनौट गर्न अनुमति दिनेछ।') }}
     </div>
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('password.email') }}">
+
+    @extends('Frontend.Auth.forgot-password')
+
+
+    {{-- <form method="POST" action="{{ route('password.email') }}">
         @csrf
 
         <!-- Email Address -->
@@ -21,5 +26,5 @@
                 {{ __('Email Password Reset Link') }}
             </x-primary-button>
         </div>
-    </form>
+    </form> --}}
 </x-guest-layout>

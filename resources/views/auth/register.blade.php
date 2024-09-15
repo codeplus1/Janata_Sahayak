@@ -1,5 +1,9 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+
+    @extends('Frontend.auth.register')
+
+
+    {{-- <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
         <!-- Name -->
@@ -73,5 +77,5 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
-    </form>
+    </form> --}}
 </x-guest-layout>
